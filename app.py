@@ -1,4 +1,5 @@
 from flask import Flask
+from flask.templating import render_template
 
 from controllers.member_controller import members_blueprint
 from controllers.class_controller import classes_blueprint
@@ -12,7 +13,7 @@ app.register_blueprint(bookings_blueprint)
 
 @app.route('/')
 def home():
-    return "hello this is the beginning"
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
