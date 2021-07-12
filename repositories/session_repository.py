@@ -13,3 +13,14 @@ def save(session):
 def delete_all():
     sql = "DELETE FROM sessions"
     run_sql(sql)
+
+def members(session):
+    members = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE bookings.member_id = %s"
+    values = session.id
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = Member(row['first_name'],row['last_name'],row['age'])
+        members.append(member)
+    return members
