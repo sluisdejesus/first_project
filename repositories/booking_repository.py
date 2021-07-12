@@ -33,3 +33,12 @@ def select_all():
         booking = Booking(member, session, row['id'])
         bookings.append(booking)
     return bookings
+
+def select(id):
+    booking = None
+    sql = "SELECT * FROM bookings WHERE id = %s"
+    values = [id]
+    result = run_sql(sql,values)[0]
+    if result is not None:
+        booking = Booking(result['member_id'], result['session_id'],result['id'])
+    return booking
