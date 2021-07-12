@@ -10,3 +10,18 @@ sessions_blueprint = Blueprint("sessions", __name__)
 def sessions():
     sessions = session_repository.select_all()
     return render_template('/sessions/index.html', sessions = sessions)
+
+@sessions_blueprint.route('/sessions/new')
+def new_session():
+    sessions = session_repository.select_all()
+    return render_template('/sessions/new.html', sessions = sessions)
+
+@sessions_blueprint.route('/sessions', methods = ['POST'])
+def create_session():
+    session_name = request.form['session_name']
+    weekday = request.form['weekday']
+    instructor = request.form['instructor']
+    time = request.form['time']
+    new_session = Session(session_name, weekday, instructor, time)
+    session_repository.save(new_session)
+    return redirect ('/sessions')

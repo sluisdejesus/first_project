@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <form action="/sessions" method="post">
+<div>
+    <label for="session_name">Session name</label>
+    <input type="text" name="session_name" id="session_name">
+</div>
+<div>
+    <label for="weekday">Weekday</label>
+    <input type="text" name="weekday" id="weekday">
+</div>
+<div>
+    <label for="instructor">Instructor</label>
+    <input type="text" name="instructor" id="instructor">
+</div>
+<div>
+    <label for="time">Time</label>
+    <input type="text" name="time" id="time" placeholder="hh:mm">
+</div>
+<button type="submit">Add new session</button>
+    </form>
+</section>
+
+{% endblock %}

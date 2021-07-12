@@ -2,6 +2,9 @@
 
 {% block content %}
 <section>
+    <ul>
+        <li><a href="/sessions/new">Add new session</a></li>
+    </ul>
 {% for session in sessions %}
 <ul>
     <li><a href="/sessions/{{session.id}}">{{session.session_name}}</a></li>
