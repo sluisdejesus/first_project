@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+{% for session in sessions %}
+<ul>
+    <li><a href="/sessions/{{session.id}}">{{session.session_name}}</a></li>
+</ul>
+{% endfor %}
+
+</section>
+
+
+{%endblock%}

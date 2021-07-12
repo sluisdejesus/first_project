@@ -25,4 +25,4 @@ def select_all():
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
     for row in results:
-        
+        pass
