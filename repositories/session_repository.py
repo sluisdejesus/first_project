@@ -4,8 +4,8 @@ from models.member import Member
 from models.session import Session
 
 def save(session):
-    sql = "INSERT INTO session(session_name, instructor, weekday, time VALUES (%s, %s, %s, %s) returning id"
-    values = [session.first_name, session.instructor, session.weekday, session.time]
+    sql = "INSERT INTO sessions(session_name, instructor, weekday, time) VALUES (%s, %s, %s, %s) returning id"
+    values = [session.session_name, session.instructor, session.weekday, session.time]
     results = run_sql(sql, values)
     session.id = results[0]['id']
     return session

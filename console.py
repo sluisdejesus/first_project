@@ -18,7 +18,7 @@ member2 = Member("Ashley","Evans", 32)
 member_repository.save(member2)
 
 member3 = Member("Edward","Fletcher", 21)
-session_repository.save(member3)
+member_repository.save(member3)
 
 session1 = Session("Spin", "Thursday","John", "13:00")
 session_repository.save(session1)
