@@ -14,6 +14,11 @@ def delete_all():
     sql = "DELETE FROM sessions"
     run_sql(sql)
 
+def delete(id):
+    sql = "DELETE FROM sessions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def members(session):
     members = []
     sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE bookings.member_id = %s"
