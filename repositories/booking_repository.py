@@ -18,3 +18,11 @@ def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def select_all():
+    bookings = []
+
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    for row in results:
+        

@@ -29,3 +29,13 @@ def members(session):
         member = Member(row['first_name'],row['last_name'],row['age'])
         members.append(member)
     return members
+
+def select_all():
+    sessions = []
+
+    sql = "SELECT * FROM sessions"
+    results = run_sql(sql)
+    for row in results:
+        session = Session(row['session_name'], row['weekday'], row['instructor'], row['time'])
+        sessions.append(session)
+    return sessions
