@@ -3,8 +3,8 @@ from models.booking import Booking
 from models.session import Session
 from models.member import Member
 
-import member_repository as member_repository
-import session_repository as session_repository
+import repositories.member_repository as member_repository
+import repositories.session_repository as session_repository
 
 def save(booking):
     sql = "INSERT INTO bookings (member_id, session_id) VALUES (%s,%s) RETURNING id"

@@ -22,7 +22,7 @@ def delete(id):
 def members(session):
     members = []
     sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE bookings.member_id = %s"
-    values = session.id
+    values = [session.id]
     results = run_sql(sql, values)
 
     for row in results:
@@ -42,9 +42,9 @@ def select_all():
 
 def select(id):
     session = None
-    sql = "SELECT FROM sessions WHERE id = %s"
+    sql = "SELECT * FROM sessions WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
     if result is not None:
         session = Session(result['session_name'], result['weekday'], result['instructor'], result['time'])

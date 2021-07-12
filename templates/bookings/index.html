@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+{% for booking in bookings %}
+<ul>
+    <li><a href="/bookings/{{booking.id}}">Booking number {{booking.id}}</a></li>
+</ul>
+{% endfor %}
+
+</section>
+
+
+{%endblock%}
