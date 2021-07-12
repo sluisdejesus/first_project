@@ -46,3 +46,5 @@ booking_repository.save(booking5)
 
 booking6 = Booking(member3, session1)
 booking_repository.save(booking6)
+
+pdb.set_trace()
