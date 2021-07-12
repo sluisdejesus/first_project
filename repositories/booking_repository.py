@@ -3,6 +3,9 @@ from models.booking import Booking
 from models.session import Session
 from models.member import Member
 
+import member_repository as member_repository
+import session_repository as session_repository
+
 def save(booking):
     sql = "INSERT INTO bookings (member_id, session_id) VALUES (%s,%s) RETURNING id"
     values = [booking.member.id, booking.session.id ]
@@ -21,8 +24,12 @@ def delete(id):
 
 def select_all():
     bookings = []
-
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
+
     for row in results:
-        pass
+        member = member_repository.select(row['member_id'])
+        session = session_repository.select(row['session_id'])
+        booking = Booking(member, session, row['id'])
+        bookings.append(booking)
+    return bookings

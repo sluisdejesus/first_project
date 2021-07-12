@@ -39,3 +39,13 @@ def select_all():
         session = Session(row['session_name'], row['weekday'], row['instructor'], row['time'])
         sessions.append(session)
     return sessions
+
+def select(id):
+    session = None
+    sql = "SELECT FROM sessions WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+
+    if result is not None:
+        session = Session(result['session_name'], result['weekday'], result['instructor'], result['time'])
+    return session
