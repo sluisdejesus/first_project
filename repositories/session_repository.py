@@ -36,7 +36,7 @@ def select_all():
     sql = "SELECT * FROM sessions"
     results = run_sql(sql)
     for row in results:
-        session = Session(row['session_name'], row['weekday'], row['instructor'], row['time'])
+        session = Session(row['session_name'], row['weekday'], row['instructor'], row['time'], row['id'])
         sessions.append(session)
     return sessions
 

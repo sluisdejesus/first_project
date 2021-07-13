@@ -36,7 +36,7 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['age'])
+        member = Member(row['first_name'], row['last_name'], row['age'], row['id'])
         members.append(member)
     return members
 
