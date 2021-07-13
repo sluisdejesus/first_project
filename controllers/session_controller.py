@@ -14,7 +14,8 @@ def sessions():
 @sessions_blueprint.route('/sessions/<id>')
 def show_session(id):
     session = session_repository.select(id)
-    return render_template('/sessions/show.html', session = session)
+    members = session_repository.members(session)
+    return render_template('/sessions/show.html', session = session, members = members)
 
 @sessions_blueprint.route('/sessions/new')
 def new_session():
@@ -50,3 +51,4 @@ def update_session(id):
 def session_delete(id):
     session_repository.delete(id)
     return redirect ('/sessions')
+

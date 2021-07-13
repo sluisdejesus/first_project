@@ -14,4 +14,12 @@
     <button type="submit">Delete this session</button>
     </form>
 </section>
+<section>
+    <ul>
+        <h3>Members booked into this session:</h3>
+        {% for member in members %}
+        <li>{{member.first_name}} {{member.last_name}}</li>
+        {% endfor %}
+    </ul>
+</section>
 {% endblock %}

@@ -42,3 +42,12 @@ def select(id):
     if result is not None:
         booking = Booking(result['member_id'], result['session_id'],result['id'])
     return booking
+
+def match_tables(member,session):
+    sql = "SELECT member_id, session_id FROM bookings WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for row in results:
+        if (row['member_id']) == member.id and (row['session_id']) == session.id:
+            print("hello")
+    
