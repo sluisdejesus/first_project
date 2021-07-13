@@ -30,3 +30,9 @@ def create_session():
     new_session = Session(session_name, weekday, instructor, time)
     session_repository.save(new_session)
     return redirect ('/sessions')
+
+@sessions_blueprint.route('/sessions/<id>/edit')
+def edit_session(id):
+    session = session_repository.select(id)
+    return render_template('sessions/edit.html', session = session)
+    

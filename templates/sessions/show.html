@@ -1,1 +1,14 @@
-Fixed it
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p>{{session.session_name}}</p>
+    <p>{{session.instructor}}</p>
+    <p>{{session.weekday}}</p>
+    <p>{{session.time}}</p>
+</div>
+
+<p><a href="/sessions/{{session.id}}/edit">Edit session details</a></p>
+
+
+{% endblock %}

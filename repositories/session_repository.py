@@ -49,3 +49,5 @@ def select(id):
     if result is not None:
         session = Session(result['session_name'], result['weekday'], result['instructor'], result['time'])
     return session
+
+   
