@@ -1,1 +1,26 @@
 {% extends "base.html" %}
+
+{% block content %}
+<section>
+    <form action="/sessions/{{session.id}}" method="post">
+<div>
+    <label for="session_name">Session name</label>
+    <input type="text" name="session_name" id="session_name" value="{{session.session_name}}" required autofocus>
+</div>
+<div>
+    <label for="weekday">Weekday</label>
+    <input type="text" name="weekday" id="weekday" value="{{session.weekday}}"required autofocus>
+</div>
+<div>
+    <label for="instructor">Instructor</label>
+    <input type="text" name="instructor" id="instructor" value="{{session.instructor}}" required autofocus>
+</div>
+<div>
+    <label for="time">Time</label>
+    <input type="text" name="time" id="time" placeholder="hh:mm" value="{{session.time}}" required autofocus>
+</div>
+<button type="submit">Update session details</button>
+    </form>
+</section>
+
+{% endblock %}

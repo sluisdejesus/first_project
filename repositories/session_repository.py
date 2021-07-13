@@ -47,7 +47,12 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        session = Session(result['session_name'], result['weekday'], result['instructor'], result['time'])
+        session = Session(result['session_name'], result['weekday'], result['instructor'], result['time'], result['id'])
     return session
+
+def update(session):
+    sql = "UPDATE sessions SET (session_name, weekday, instructor, time) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [session. session_name, session.weekday, session.instructor, session.time, session.id]
+    run_sql(sql, values)
 
    
