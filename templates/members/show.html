@@ -10,4 +10,10 @@
 
     <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
 </div>
+
+<section>
+    <form action="/members/{{member.id}}/delete" method="POST">
+    <button type="submit">Delete this member</button>
+    </form>
+</section>
 {% endblock%}

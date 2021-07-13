@@ -9,5 +9,9 @@
 </div>
 <p><a href="/sessions/{{session.id}}/edit">Edit session details</a></p>
 
-<p>{{session.id}}</p>
+<section>
+    <form action="/sessions/{{session.id}}/delete" method="POST">
+    <button type="submit">Delete this session</button>
+    </form>
+</section>
 {% endblock %}

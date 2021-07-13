@@ -45,3 +45,8 @@ def update_session(id):
     session = Session(session_name, weekday, instructor, time, id)
     session_repository.update(session)
     return redirect ('/sessions/'+id)
+
+@sessions_blueprint.route('/sessions/<id>/delete', methods = ['POST'])
+def session_delete(id):
+    session_repository.delete(id)
+    return redirect ('/sessions')

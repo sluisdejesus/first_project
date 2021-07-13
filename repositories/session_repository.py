@@ -55,4 +55,13 @@ def update(session):
     values = [session. session_name, session.weekday, session.instructor, session.time, session.id]
     run_sql(sql, values)
 
+def delete_all():
+    sql = "DELETE FROM sessions"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM sessions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
    
