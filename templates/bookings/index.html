@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section>
+<section class="show_blocks">
 {% for booking in bookings %}
-{%if booking.member_id == member.id, booking.session_id == session.id%}
-
-
-
-<p>{{session.name}} {{member.first_name}}</p>
-{% endif %}
+<ul class="show">
+    <li><a href="">Booking number: {{booking.id}}</a></li>
+</ul>
 {% endfor %}
 
 </section>

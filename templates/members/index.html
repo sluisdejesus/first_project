@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul><li><a href="/members/new">Add new member</a></li></ul>
+<section class="show_blocks">
+    <ul class="show"><li><a href="/members/new">Add new member</a></li></ul>
 <tr></tr>
-<section>
+
 {% for member in members %}
 
-<ul>
+<ul class="show">
     <li><a href="/members/{{member.id}}">{{member.first_name}} {{member.last_name}}</a></li>
 </ul>
 

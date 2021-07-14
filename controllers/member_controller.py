@@ -2,6 +2,7 @@ from flask import Flask, render_template,request,redirect
 from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
+import repositories.session_repository as session_repository
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -48,3 +49,9 @@ def update_member(id):
 def member_delete(id):
     member_repository.delete(id)
     return redirect ('/members')
+
+@members_blueprint.route('/members/<id>/newbooking')
+def book_member(id):
+    member_id = id
+    sessions = session_repository.select_all()
+    return render_template('/bookings/new.html', member_id = member_id, sessions = sessions)

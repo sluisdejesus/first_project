@@ -11,13 +11,17 @@ bookings_blueprint = Blueprint("bookings", __name__)
 @bookings_blueprint.route('/bookings')
 def bookings():
     bookings = booking_repository.select_all()
-    members = member_repository.select_all()
-    sessions = session_repository.select_all()
-    return render_template('/bookings/index.html', bookings = bookings, sessions = sessions, members = members)
+    return render_template('/bookings/index.html', bookings = bookings)
 
 @bookings_blueprint.route('/bookings/<id>')
 def show_booking(id):
     booking = booking_repository.select(id)
-    member = member_repository.select(id)
-    session = session_repository(id)
     return render_template('bookings/show.html', booking = booking, session = session, member = member)
+
+@bookings_blueprint.route('/bookings', methods = ['POST'])
+def make_booking():
+    member_id = request.form['member.id']
+    session_id = request.form['session.id']
+    booking = Booking(session_id, member_id, id)
+    booking_repository.save(booking)
+    return "Booking made"
