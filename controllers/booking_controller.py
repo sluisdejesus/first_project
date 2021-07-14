@@ -16,7 +16,9 @@ def bookings():
 @bookings_blueprint.route('/bookings/<id>')
 def show_booking(id):
     booking = booking_repository.select(id)
-    return render_template('bookings/show.html', booking = booking, session = session, member = member)
+    sessions = session_repository.select_all()
+    members = member_repository.select_all()
+    return render_template('bookings/show.html', booking = booking, sessions = sessions, members = members)
 
 @bookings_blueprint.route('/bookings', methods = ['POST'])
 def make_booking():
@@ -26,4 +28,4 @@ def make_booking():
     session = session_repository.select(session_id)
     booking = Booking(session, member, id)
     booking_repository.save(booking)
-    return "Booking made"
+    return redirect ('/members')
