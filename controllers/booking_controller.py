@@ -20,8 +20,10 @@ def show_booking(id):
 
 @bookings_blueprint.route('/bookings', methods = ['POST'])
 def make_booking():
-    member_id = request.form['member.id']
-    session_id = request.form['session.id']
-    booking = Booking(session_id, member_id, id)
+    member_id = request.form['member_id']
+    session_id = request.form['session_id']
+    member = member_repository.select(member_id)
+    session = session_repository.select(session_id)
+    booking = Booking(session, member, id)
     booking_repository.save(booking)
     return "Booking made"

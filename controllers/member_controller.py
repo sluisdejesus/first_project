@@ -3,6 +3,7 @@ from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
 import repositories.session_repository as session_repository
+import pdb
 
 members_blueprint = Blueprint("members", __name__)
 

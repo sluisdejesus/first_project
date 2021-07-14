@@ -6,9 +6,10 @@
 <label for="session_id">Session name:</label>
 <select name="session_id" id="session_id">
     {% for session in sessions %}
-    <option value="{{session_id}}"> {{session.name}}</option>
+    <option value="{{session.id}}"> {{session.session_name}}</option>
     {% endfor %}
 </select>
+<input type="hidden" value="{{member_id}}" name="member_id" id="member_id">
 <button type="submit">Book member on this session</button>
 </form>
 
