@@ -16,4 +16,12 @@
     <button type="submit">Delete this member</button>
     </form>
 </section>
+<section>
+    <h3>Sessions booked:</h3>
+    <ul>
+        {% for session in sessions %}
+        <li>{{session.session_name}}, {{session.weekday}}, {{session.time}}, {{session.instructor}}</li>
+        {% endfor %}
+    </ul>
+</section>
 {% endblock%}

@@ -15,8 +15,8 @@
     </form>
 </section>
 <section>
-    <ul>
-        <h3>Members booked into this session:</h3>
+    <h3>Members booked into this session:</h3>
+    <ul>        
         {% for member in members %}
         <li>{{member.first_name}} {{member.last_name}}</li>
         {% endfor %}

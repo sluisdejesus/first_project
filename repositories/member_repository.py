@@ -26,7 +26,7 @@ def sessions(member):
     results = run_sql(sql, values)
 
     for row in results:
-        session = Session(row['session_name'], row['weekday'],['instructor'],['time'],['id'])
+        session = Session(row['session_name'], row['weekday'],row['instructor'],row['time'],row['id'])
         sessions.append(session)
     return sessions
 
