@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
+<main class="individual">
+    <div>
     <p>{{member.first_name}} {{member.last_name}} {{member.age}}</p>
     
     <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
@@ -22,5 +23,5 @@
 </section>
 <section>
     <p><a href="/members/{{member.id}}/newbooking">Book new session</a> </p>
-</section>
+</section></main>
 {% endblock%}
