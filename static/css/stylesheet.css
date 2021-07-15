@@ -4,7 +4,7 @@
     background-color: dodgerblue;
     height: 10vh;
     margin: 2vw;
-    border: 10px, solid;
+    border:solid black 5px;
     justify-content: space-evenly;
     padding-top: 1.5vh;
     font-size: 2vh;
@@ -60,7 +60,7 @@ body{
     height: 4vh;
     width: 30%;
     border-color: dodgerblue;
-    border: 10px, solid;
+    border:solid black 5px;
     justify-content: space-evenly;
     padding-top: 1.5vh;
     font-size: 2vh;
@@ -100,7 +100,7 @@ footer{
     border-radius: 2%;
     opacity: 80%;
     border-style: solid;
-    border: white, 4vh;
+    border:solid black 5px
 }
 
 a{
@@ -117,4 +117,30 @@ display: flex;
 
 .individual {
     background-color: dodgerblue;
+    border-radius: 5%;
+    width:fit-content;
+    border:solid black 5px
+}
+
+.show_blocks2{
+display:flex;
+
+}
+
+.show2{
+    width: fit-content;
+    list-style: none;
+    background-color: dodgerblue;
+    height: fit-content;
+    margin: 2vw;
+    border:solid black 5px;
+    justify-content: space-evenly;
+    padding-top: 1.5vh;
+    font-size: 2vh;
+    border-radius: 5%;
+    color: white;
+    text-align: center;
+    line-height: 10vh;
+    padding-right: 2vw;
+    opacity: 80%;
 }

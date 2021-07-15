@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="show_blocks">
+<section class="show_blocks2">
 {% for booking in bookings %}
-<ul class="show">
+<ul class="show2">
     <li><a href="/bookings/{{booking.id}}">Booking: {{booking.id}}</a></li>
 </ul>
 {% endfor %}
